@@ -1,6 +1,6 @@
 public class Card {
-    public String suit;
-    public int value;
+    private String suit;
+    private int value;
 
 
     public Card(String suit, int value){

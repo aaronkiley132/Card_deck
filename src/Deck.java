@@ -29,11 +29,12 @@ public class Deck {
         int counter = 0;
         while ((counter < size) && (swaps = true)) {
             for (int i = 0; i < (size - 1 - counter); i++) {
+                Card x = new Card(" ", 0);
                 cardOne = deck[i].toString();
                 cardTwo = deck[i + 1].toString();
-                //if (String.compareTo(cardOne, cardTwo)){
+                if (String.compareTo(cardOne, cardTwo) < 0){
 
-                //}
+                }
             }
         }
     }
