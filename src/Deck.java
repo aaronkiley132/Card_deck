@@ -13,8 +13,8 @@ public class Deck {
             for (int j = 0; j < 13; j++)
             {
                 Card placeholder = new Card("Clubs", 12);
-                placeholder.value = j + 1;
-                placeholder.suit = suits[i];
+                placeholder.setValue(j+1);
+                placeholder.setSuit(suits[i]);
                 deck[counter] = placeholder;
                 counter++;
             }
@@ -24,16 +24,17 @@ public class Deck {
     public void sortAlphabetically() { //bubble sort to sort the cards alphabetically
         String cardOne;
         String cardTwo;
-        Card x = new Card(" ", 0);
         boolean swaps = true;
         int counter = 0;
+        int comparison;
         while ((counter < size) && (swaps = true)) {
             for (int i = 0; i < (size - 1 - counter); i++) {
                 Card x = new Card(" ", 0);
                 cardOne = deck[i].toString();
                 cardTwo = deck[i + 1].toString();
-                if (String.compareTo(cardOne, cardTwo) < 0){
-
+                comparison = cardOne.compareTo(cardTwo);
+                if (comparison < 0){
+                    System.out.println("Switch");
                 }
             }
         }

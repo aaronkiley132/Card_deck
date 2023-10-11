@@ -25,4 +25,12 @@ public class Card {
         }
         return name;
     }
+
+    public void setValue(int v){
+        this.value = v;
+    }
+
+    public void setSuit(String s){
+        this.suit = s;
+    }
 }

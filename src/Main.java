@@ -3,5 +3,7 @@ public class Main {
         Card cardOne = new Card("Hearts", 7);
         Deck myDeck = new Deck();
         myDeck.displayDeck();
+
+        myDeck.sortAlphabetically();
         }
     }
