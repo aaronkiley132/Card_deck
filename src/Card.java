@@ -11,17 +11,17 @@ public class Card {
 
     public String toString(){
         String name = " ";
-        if (value == 1){
+        if (this.value == 1){
             name = "Ace of " + suit;
         }
-        else if (value < 11){
+        else if (this.value < 11){
             name = Integer.toString(value) + " of " + suit;
-        } else if (value == 11) {
+        } else if (this.value == 11) {
             name = "Jack of " + suit;
-        } else if (value == 12) {
+        } else if (this.value == 12) {
             name = "Queen of " + suit;
-        } else if (value == 13){
-            name = "King of " + suit;
+        } else if (this.value == 13){
+            name = "King of " + this.suit;
         }
         return name;
     }
