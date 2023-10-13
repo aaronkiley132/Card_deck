@@ -28,20 +28,45 @@ public class Deck {
         int counter = 0;
         int comparison;
         while ((counter < size) && (swaps = true)) {
-            for (int i = 0; i < (size - 1 - counter); i++) {
-                swaps = false;
-                Card x = new Card(" ", 0);
-                cardOne = deck[i].toString();
-                cardTwo = deck[i + 1].toString();
-                comparison = cardOne.compareTo(cardTwo);
-                if (comparison < 0){
-                    System.out.println("Switch");
-                    swaps = true;
-                    counter++;
-                }
+            for (int i = 0; i < ((size - 1) - counter); i++) {
+              swaps = false;
+              Card x = new Card(" ", 0);
+              comparison = deck[i].getValue() - deck[i+1].getValue();
+              if (comparison > 0){
+                x = deck[i];
+                deck[i] = deck[i+1];
+                deck[i+1] = x;
+                swaps = true;
+              }
             }
+          counter++;
         }
     }
+
+  public void sortSuits(){
+    this.sortAlphabetically();
+    String cardOne;
+    String cardTwo;
+    boolean swaps = true;
+    int counter = 0;
+    int comparison;
+    while ((counter < size) && (swaps = true)) {
+        for (int i = 0; i < ((size - 1) - counter); i++) {
+          swaps = false;
+          Card x = new Card(" ", 0);
+          cardOne = deck[i].getSuit();
+          cardTwo = deck[i + 1].getSuit();
+          comparison = cardOne.compareTo(cardTwo);
+          if (comparison > 0){
+            x = deck[i];
+            deck[i] = deck[i+1];
+            deck[i+1] = x;
+            swaps = true;
+          }
+        }
+      counter++;
+    }
+  }
 
     //returns a string of the deck
     public void displayDeck(){

@@ -26,6 +26,42 @@ public class Card {
         return name;
     }
 
+    // compares card values
+    public int compareTo(Card cardTwo){
+      int comparison = this.value - cardTwo.value;
+      if (comparison == 0){
+        int comparisonTwo = this.suit.compareTo(cardTwo.suit);
+        if (comparisonTwo > 0){
+          return 1; // one means that the first card is greater than the second
+        }
+        else if (comparisonTwo < 0){
+          return -1;
+        }
+        else{
+          return 0; //they are the same card
+        }
+      }
+    else if (comparison >= 1){
+      return 1; // one means that the first card is greater than the second
+    }
+    else if (comparison < 0){
+      return -1; // minus one means that the second card is greater
+    }
+      else{
+        return 0; // the same card
+      }
+    }
+
+    //getters
+    public int getValue(){
+      return this.value;
+    }
+
+    public String getSuit(){
+      return this.suit;
+    }
+  
+    // setters
     public void setValue(int v){
         this.value = v;
     }
